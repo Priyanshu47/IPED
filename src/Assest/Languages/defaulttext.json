@@ -1,0 +1,12 @@
+{
+  "Login_Page" :
+  {
+    "welcomemsg": "Welcome back! 👋",
+    "login": "Login Your Account",
+    "email": "Email",
+    "password": "Password",
+    "loginbtn": "Login",
+    "contacts": "Contact Us",
+    "cantaccess": "Can’t access your account?"
+  } 
+}

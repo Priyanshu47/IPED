@@ -13,7 +13,7 @@ const taskbar = () => {
   ]
   return (
     
-    <div className="w-[360px] h-[416px] text-white bg-custom-blue rounded-lg overflow-hidden shadow-lg">
+    <div className="w-[360px]  h-[416px] text-white bg-custom-blue rounded-lg overflow-hidden shadow-lg">
        <h1 className="bg-custom-lightblue p-3 text-base justify-center h-[52px]">Tasks</h1>
        
           { 

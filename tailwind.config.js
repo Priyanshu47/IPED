@@ -15,8 +15,6 @@ module.exports = {
         'custom-black':'#1D1D1D',
         'custom-skyblue':'#0066FF',
         'custom-lightblue':'#29298A',
-        'lightwhite' :'#00006914',
-        'light-pink' : '#0000691F',
 
                 
       },  

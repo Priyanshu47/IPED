@@ -7,6 +7,15 @@
     "password": "Password",
     "loginbtn": "Login",
     "contacts": "Contact Us",
-    "cantaccess": "Can’t access your account?"
+    "cantaccess": "Can’t access your account?",
+    "emailReq": "Email is required.",
+    "emailInv": "Email is invalid.",
+    "passwordReq": "Password is required.",
+    "passwordInv": "Password must be at least 6 characters."
+  } ,
+  "Dashboard_Page" :
+  {
+    
   } 
+  
 }

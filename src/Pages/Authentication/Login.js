@@ -9,8 +9,40 @@ import Link from "next/link";
 // import { toast } from "react-toastify";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(''); 
+    const [password, setPassword] = useState(''); 
+    const [errors, setErrors] = useState({}); 
+    const [isFormValid, setIsFormValid] = useState(false); 
+
+    useEffect(() => { 
+      validateForm(); 
+  }, [email, password]); 
+  // Validate form 
+  const validateForm = () => { 
+      let errors = {}; 
+      if (!email) { 
+          errors.email = DefaultENG.Login_Page.emailReq; 
+      } else if (!/\S+@\S+\.\S+/.test(email)) { 
+          errors.email = DefaultENG.Login_Page.emailInv; 
+      } 
+
+      if (!password) { 
+          errors.password = DefaultENG.Login_Page.passwordReq; 
+      } else if (password.length < 6) { 
+          errors.password = DefaultENG.Login_Page.passwordInv; 
+      } 
+
+      setErrors(errors); 
+      setIsFormValid(Object.keys(errors).length === 0); 
+  }; 
+  // Submit
+  const handleSubmit = () => { 
+      if (isFormValid) { 
+        alert('Login successfully!'); 
+      } else { 
+          alert('Form has errors. Please correct them.'); 
+      } 
+  }; 
 
   // const router = useRouter();
 
@@ -38,7 +70,7 @@ const Login = () => {
     <Nav/>
       <div className="flex items-center justify-center min-h-[80vh] font-Mulish bg-white">
       
-        <div className="w-full max-w-[430px] px-8 py-10 mx-auto bg-white border rounded-lg">
+        <div className="w-[430px] px-8 py-10 mx-auto bg-white border rounded-lg">
           <p className="text-base text-custom-red">{DefaultENG.Login_Page.welcomemsg}</p>
           <h3 className="text-2xl font-semibold">{DefaultENG.Login_Page.login}</h3>
           <div className="my-5">
@@ -50,7 +82,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-           
+            {errors.email && <p style={styles.error}>{errors.email}</p>} 
             </div>
             <div className="my-5">
             <label>{DefaultENG.Login_Page.password}</label>
@@ -58,19 +90,19 @@ const Login = () => {
               type="Password"
               className="border w-full py-2 px-2 text-neutral-500 rounded-md hover:border-indigo-600"
               placeholder="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
             />
-            
+             {errors.password && <p style={styles.error}>{errors.password}</p>}  
             </div>
 
-
+            <Link href="/dashboard">
             <button className="w-full h-12 px-3.5 py-2 bg-custom-blue rounded-3xl justify-center items-center gap-2.5 inline-flex text-white text-base font-bold font-Mulish leading-none"
-            //  onClick={handleSubmit}
+            onClick={handleSubmit}
             >
               {DefaultENG.Login_Page.loginbtn}
             </button>
-
+            </Link>
             <p className="text-center pt-5 text-custom-sky text-s font-normal font-Mulish underline">
               {DefaultENG.Login_Page.cantaccess}
             </p>
@@ -79,5 +111,13 @@ const Login = () => {
     </>
   );
 };
+const styles = { 
+  error: { 
+      color: 'red', 
+      fontSize: '14px', 
+      marginBottom: '6px', 
+  }, 
+}; 
+
 
 export default Login;

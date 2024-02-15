@@ -3,7 +3,7 @@
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
-  font-family: '__Inter_e66fe9';
+  font-family: '__Inter_aaf875';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -12,7 +12,7 @@
 }
 /* cyrillic */
 @font-face {
-  font-family: '__Inter_e66fe9';
+  font-family: '__Inter_aaf875';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -21,7 +21,7 @@
 }
 /* greek-ext */
 @font-face {
-  font-family: '__Inter_e66fe9';
+  font-family: '__Inter_aaf875';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -30,16 +30,16 @@
 }
 /* greek */
 @font-face {
-  font-family: '__Inter_e66fe9';
+  font-family: '__Inter_aaf875';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
   src: url(/_next/static/media/51ed15f9841b9f9d-s.woff2) format('woff2');
-  unicode-range: U+0370-03FF;
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 /* vietnamese */
 @font-face {
-  font-family: '__Inter_e66fe9';
+  font-family: '__Inter_aaf875';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -48,23 +48,23 @@
 }
 /* latin-ext */
 @font-face {
-  font-family: '__Inter_e66fe9';
+  font-family: '__Inter_aaf875';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
   src: url(/_next/static/media/d6b16ce4a6175f26-s.woff2) format('woff2');
-  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: '__Inter_e66fe9';
+  font-family: '__Inter_aaf875';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
   src: url(/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}@font-face {font-family: '__Inter_Fallback_e66fe9';src: local("Arial");ascent-override: 90.20%;descent-override: 22.48%;line-gap-override: 0.00%;size-adjust: 107.40%
-}.__className_e66fe9 {font-family: '__Inter_e66fe9', '__Inter_Fallback_e66fe9';font-style: normal
+}@font-face {font-family: '__Inter_Fallback_aaf875';src: local("Arial");ascent-override: 90.20%;descent-override: 22.48%;line-gap-override: 0.00%;size-adjust: 107.40%
+}.__className_aaf875 {font-family: '__Inter_aaf875', '__Inter_Fallback_aaf875';font-style: normal
 }
 
 /*!*****************************************************************************************************************************************************************************************************************************************************************!*\
@@ -650,6 +650,9 @@ video {
 .h-\[71px\]{
   height: 71px;
 }
+.h-\[80px\]{
+  height: 80px;
+}
 .h-full{
   height: 100%;
 }
@@ -671,6 +674,9 @@ video {
 .w-6{
   width: 1.5rem;
 }
+.w-\[1040px\]{
+  width: 1040px;
+}
 .w-\[320px\]{
   width: 320px;
 }
@@ -680,14 +686,14 @@ video {
 .w-\[360px\]{
   width: 360px;
 }
+.w-\[430px\]{
+  width: 430px;
+}
 .w-\[660px\]{
   width: 660px;
 }
 .w-full{
   width: 100%;
-}
-.max-w-\[430px\]{
-  max-width: 430px;
 }
 .max-w-screen-2xl{
   max-width: 1536px;
@@ -784,9 +790,6 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
-.border-light-pink{
-  border-color: #0000691F;
-}
 .border-opacity-10{
   --tw-border-opacity: 0.1;
 }
@@ -805,9 +808,6 @@ video {
 .bg-custom-lightblue{
   --tw-bg-opacity: 1;
   background-color: rgb(41 41 138 / var(--tw-bg-opacity));
-}
-.bg-lightwhite{
-  background-color: #00006914;
 }
 .bg-white{
   --tw-bg-opacity: 1;
@@ -1021,6 +1021,14 @@ video {
 
   .lg\:hidden{
     display: none;
+  }
+
+  .lg\:w-2\/4{
+    width: 50%;
+  }
+
+  .lg\:w-full{
+    width: 100%;
   }
 
   .lg\:translate-x-0{

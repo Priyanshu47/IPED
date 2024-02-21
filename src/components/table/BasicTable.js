@@ -10,9 +10,9 @@ const BasicTable = () => {
   const [modalOpen, setModalOpen] = useState(false)
 
   const [rows, setRows] = useState([
-    { SNo: "1", description: "this is the first page", status: "Approved" },
-    { SNo: "2", description: "this is the second page", status: "Reject" },
-    { SNo: "3", description: "this is the third page", status: "error" },
+    { sNo: "1", type: "Casual", status: "Approved",from: "januray 20,2024",to: "januray 22,2024",reason: "Family Emergency",reasonId:"12345" },
+    { sNo: "2", type: "Casual", status: "Reject",from: "januray 20,2024",to: "januray 22,2024",reason: "Family Emergency",reasonId:"12345" },
+    { sNo: "3", type: "Casual", status: "Pending",from: "januray 20,2024",to: "januray 22,2024",reason: "Family Emergency",reasonId:"12345" },
   ]);
 
 
@@ -40,12 +40,13 @@ const BasicTable = () => {
   }
   return (
     <div>
-    <Tables rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
+   
     <button className="button" onClick={() => setModalOpen(true)}>Add</button>
     {modalOpen && <Modal closeModal={() => { setModalOpen(false); setRowToEdit(null); }}  onSubmit={handleSubmit}
          defaultValue={rowToEdit !== null && rows[rowToEdit]}           
                     />}
 
+    <Tables rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
   </div>
   )
 }

@@ -1,20 +1,20 @@
 import "./Tables.css"
-import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs"
+// import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs"
 
 
 export const Tables = ({ rows, deleteRow, editRow }) => {
   return (
-    <div className="">
+    <div>
       <table className="table">
         <thead>
           <tr>
             <th>S.No</th>
-            <th className="expand">type</th>
-            <th>Status</th>
-            <th>from</th>
-            <th>to</th>
+            <th>Type</th>
+            <th>From</th>
+            <th>To</th>
             <th>Reason</th>
-            <th>Request ID</th>
+            <th>RequestId</th>
+            <th>Status</th>
           </tr>
         </thead>
 
@@ -27,11 +27,17 @@ export const Tables = ({ rows, deleteRow, editRow }) => {
 
               return (
                 <tr key={idx}>
-                  <td>{row.page}</td>
-                  <td className="expand">{row.description}</td>
+                  <td>{row.sNo}</td>
+                  <td>{row.type}</td>
+                  <td>{row.from}</td>
+                  <td>{row.to}</td>
+                  <td>{row.reason}</td>
+                  <td>{row.reasonId}</td>
                   <td>
-                    <span className={`label label-${row.status}`}>{statusText}</span>
+                    <span className= "{`label label-${row.status}`}">{row.status}</span>
                   </td>
+                 
+      
                   {/* <td>
                     <span className="icons">
                       <BsFillTrashFill className="delete-btn" onClick={() => deleteRow(idx)} />

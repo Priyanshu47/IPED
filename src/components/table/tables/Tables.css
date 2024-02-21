@@ -16,8 +16,8 @@
   }
   
   .table thead{
-    background-color:#ccc;
-    color:#222;
+    background-color:#9ac4da;
+    color:#222e79;
   }
   
   .table th, .table td {
@@ -35,9 +35,6 @@
     
   }
   
-  .expand {
-    width:70%;
-  }
   
   .label{
     border-radius:3px;
@@ -46,12 +43,12 @@
   }
   
   .label-draft {
-    background-color:#777;
+    background-color:#4e4d4d;
   }
   
   .label-live {
     background-color:green;
-  }
+  } 
   
   .label-error {
     background-color:red;

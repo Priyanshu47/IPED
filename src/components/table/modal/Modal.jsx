@@ -27,9 +27,9 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
   const [formState, setFormState] = useState(
     defaultValue ||
     {
-      SNo: "",
+      page: "",
       description: "",
-      status: "Approved"
+      status: "live"
     });
 
 
@@ -58,21 +58,21 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
     }}>
       <div className="cont">
         <form>
-        <div className="form-group">
-            <label htmlFor="status">Status</label>
-            <select name="status" value={formState.status} onChange={handleChange} >
-              <option value="live"> Approved</option>
-              <option value="draft">Rejected</option>
-              <option value="error"> error</option>
-            </select>
-          </div>
           <div className="form-group">
-            <label htmlFor="page">S.No</label>
-            <input name="page" value={formState.SNo} onChange={handleChange} />
+            <label htmlFor="page">Page</label>
+            <input name="page" value={formState.page} onChange={handleChange} />
           </div>
           <div className="form-group">
             <label htmlFor="desscription">Description</label>
             <textarea name="description" value={formState.description} onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="status">Status</label>
+            <select name="status" value={formState.status} onChange={handleChange} >
+              <option value="live"> live</option>
+              <option value="draft"> draft</option>
+              <option value="error"> error</option>
+            </select>
           </div>
           { errors && <div className= "error">
             {`Please include : ${errors}`}

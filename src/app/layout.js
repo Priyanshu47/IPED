@@ -1,10 +1,10 @@
-import { Inter } from 'next/font/google'
+import { Mulish } from 'next/font/google'
 import './globals.css'
 import GlobalState from '@/context'
 import Sidebar from '@/components/sidebar'
 import Header from '@/components/header'
 
-const inter = Inter({ subsets: ['latin'] })
+const mulish = Mulish({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'IDP',
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={mulish.className}>
       {/* <GlobalState>
             <div className="flex h-screen overflow-hidden">
               <Sidebar />

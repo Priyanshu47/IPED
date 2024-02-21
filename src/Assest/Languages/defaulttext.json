@@ -11,7 +11,10 @@
     "emailReq": "Email is required.",
     "emailInv": "Email is invalid.",
     "passwordReq": "Password is required.",
-    "passwordInv": "Password must be at least 6 characters."
+    "passwordInv": "Password must be at least 6 characters.",
+    "invalid":"Invalid Credentials",
+    "empty":"Input Field Empty",
+    "loginsuc":"Login successfully"
   } ,
   "Dashboard_Page" :
   {

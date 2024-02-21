@@ -8,61 +8,76 @@ import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Login = () => {
-    const [email, setEmail] = useState(''); 
-    const [password, setPassword] = useState(''); 
-    const [errors, setErrors] = useState({}); 
-    const [isFormValid, setIsFormValid] = useState(false); 
-    const router = useRouter();
-    const showToastMessage = () => { };
-   
+const Login = () => 
+{
+  const [email, setEmail] = useState(''); 
+  const [password, setPassword] = useState(''); 
+  const [errors, setErrors] = useState({}); 
+  const [isFormValid, setIsFormValid] = useState(false); 
+  const router = useRouter();
+  const showToastMessage = () => {};
+  
 
-    useEffect(() => { 
-      validateForm(); 
+  useEffect(() => 
+  {
+    validateForm(); 
   }, [email, password]); 
+  
   // Validate form 
-  const validateForm = () => { 
-      let errors = {}; 
-      if (!email) { 
-         errors.email = ([]); 
-      } else if (!/\S+@\S+\.\S+/.test(email)) { 
+  const validateForm = () => 
+  {
+    let errors = {}; 
+    if (!email) 
+    {
+      errors.email = ([]); 
+    } 
+    else if (!/\S+@\S+\.\S+/.test(email)) 
+    { 
           errors.email = DefaultENG.Login_Page.emailInv; 
-      } 
+    } 
 
-      if (!password) { 
-        errors.password = ([]); 
-      } else if (password.length < 6) { 
-          errors.password = DefaultENG.Login_Page.passwordInv; 
-      } 
+    if (!password) 
+    {
+      errors.password = ([]); 
+    } 
+    else if (password.length < 6) 
+    {
+      errors.password = DefaultENG.Login_Page.passwordInv; 
+    } 
 
-      setErrors(errors); 
-      setIsFormValid(Object.keys(errors).length === 0); 
+    setErrors(errors); 
+    setIsFormValid(Object.keys(errors).length === 0); 
   }; 
   
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event) =>
+  {
     event.preventDefault();
-
     // Access the form elements through the event.target
-   
-   let logindata ={
-    email : event.target.email.value,
-    password : event.target.password.value
-   }
-    if (isFormValid) { 
-       const data = await loginApi(logindata) 
-       if (data?.code == 200) {
+    let logindata =
+    {
+      email : event.target.email.value,
+      password : event.target.password.value
+    }
+
+    if (isFormValid) 
+    { 
+      const data = await loginApi(logindata); 
+      if (data?.code == 200) 
+      {
+        alert(data?.message);
+        localStorage.setItem('Token', data?.token);
         router.push("/dashboard");
-        alert("Login Succsfully")
-       }
-       else {
-        toast.error("Incorrect Email Id And Password");
-       }
-      } else { 
-        toast.warning("Input Field Empty");
-        // alert('Form has errors. Please correct them.'); 
-      } 
-  
+      }
+      else 
+      {
+        toast.error(data?.message);
+      }
+    } 
+    else 
+    { 
+      toast.warning(DefaultENG.Login_Page.empty);
+    } 
   };
 
   return (

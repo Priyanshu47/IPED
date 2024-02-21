@@ -1,9 +1,16 @@
+"use client"
 import React from 'react'
+import Notificationleaves from '@/components/notificationleaves'
+import BasicTable from '@/components/table/Basictable'
+import Over from '@/components/over'
 
-const Page = () => {
+const page = () => {
   return (
-    <div>Leaves</div>
+    <>
+    <Over />
+    <BasicTable/>
+    </>
   )
 }
 
-export default Page
+export default page
